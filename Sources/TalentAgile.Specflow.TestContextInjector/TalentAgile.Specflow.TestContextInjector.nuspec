@@ -8,7 +8,6 @@
     <owners>Talent Agile</owners>
     <licenseUrl>https://github.com/TalentAgile/Specflow.TestContextInjector/blob/master/LICENCE.txt</licenseUrl>
     <projectUrl>https://github.com/TalentAgile/Specflow.TestContextInjector</projectUrl>
-    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Specflow plugin for using Runsettings parameters inside specflow tests</description>
     <releaseNotes>Initial version</releaseNotes>
