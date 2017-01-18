@@ -4,11 +4,11 @@
     <id>TalentAgile.Specflow.TestContextInjector</id>
     <version>$version$</version>
     <title>TestContext injector for MSTest context specflow generator</title>
-    <authors>Michel Perfetti</authors>
+    <authors>Talent Agile</authors>
     <owners>Talent Agile</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <licenseUrl>https://github.com/TalentAgile/Specflow.TestContextInjector/blob/master/LICENCE.txt</licenseUrl>
+    <projectUrl>https://github.com/TalentAgile/Specflow.TestContextInjector</projectUrl>
+    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Specflow plugin for using Runsettings parameters inside specflow tests</description>
     <releaseNotes>Initial version</releaseNotes>
