@@ -15,3 +15,7 @@ In your steps, you can now access the TestContext:
 var context = ScenarioContext.Current["TestContext"] as TestContext;
 ```
 
+## Credits
+
+This code comes from all other the web from people having the same issues.  Consider it as a ready to use solution for your currnt projects.
+
