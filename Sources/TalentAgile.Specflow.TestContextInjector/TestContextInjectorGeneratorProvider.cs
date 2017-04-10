@@ -45,10 +45,10 @@ namespace TalentAgile.Specflow.TestContextInjector
 
             msTestContextProperty.GetStatements.Add(new CodeMethodReturnStatement(
                 new CodeFieldReferenceExpression(
-                    new CodeThisReferenceExpression(), "_textContext")));
+                    new CodeThisReferenceExpression(), "_testContext")));
 
             msTestContextProperty.SetStatements.Add(new CodeAssignStatement(
-                new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_textContext"),
+                new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_testContext"),
                 new CodePropertySetValueReferenceExpression()));
 
             generationContext.TestClass.Members.Add(msTestContextProperty);
