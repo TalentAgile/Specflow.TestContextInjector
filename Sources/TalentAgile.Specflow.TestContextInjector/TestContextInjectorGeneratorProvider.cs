@@ -23,7 +23,37 @@ namespace TalentAgile.Specflow.TestContextInjector
             base.FinalizeTestClass(generationContext);
 
 
-            var msTestContextGeneration =
+
+            var mstestContextField = new CodeMemberField
+            {
+                Attributes = MemberAttributes.Private | MemberAttributes.Final,
+                Name = "_testContext",
+                Type = new CodeTypeReference(TESTCONTEXT_TYPE),
+            };
+
+
+            generationContext.TestClass.Members.Add(mstestContextField);
+
+            var msTestContextProperty = new CodeMemberProperty()
+            {
+                Attributes = MemberAttributes.Public | MemberAttributes.Final,
+                Type = new CodeTypeReference(TESTCONTEXT_TYPE),
+                Name = "TestContext",
+                HasGet = true,
+                HasSet = true,
+            };
+
+            msTestContextProperty.GetStatements.Add(new CodeMethodReturnStatement(
+                new CodeFieldReferenceExpression(
+                    new CodeThisReferenceExpression(), "_testContext")));
+
+            msTestContextProperty.SetStatements.Add(new CodeAssignStatement(
+                new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_testContext"),
+                new CodePropertySetValueReferenceExpression()));
+
+            generationContext.TestClass.Members.Add(msTestContextProperty);
+
+            var msTestContextScenarioInit =
                 new CodeExpressionStatement(
                     new CodeMethodInvokeExpression(
                         new CodeTypeReferenceExpression("testRunner.ScenarioContext"),
@@ -31,29 +61,12 @@ namespace TalentAgile.Specflow.TestContextInjector
                         new CodeExpression[]
                         {
                             new CodePrimitiveExpression("TestContext"),
-                            new CodeArgumentReferenceExpression("_testContext")
+                            new CodeArgumentReferenceExpression("TestContext")
                         }));
 
+            generationContext.ScenarioInitializeMethod.Statements.Add(msTestContextScenarioInit);
+          
 
-            generationContext.ScenarioInitializeMethod.Statements.Add(msTestContextGeneration);
-
-
-            var msTestAssignment =
-                new CodeAssignStatement(
-                    new CodeVariableReferenceExpression("_testContext"),
-                    new CodeVariableReferenceExpression("testContext"));
-            generationContext.TestClassInitializeMethod.Statements.Add(msTestAssignment);
-
-
-            var mstestContextFiled = new CodeMemberField
-            {
-                Attributes = MemberAttributes.Private | MemberAttributes.Static | MemberAttributes.Final,
-                Name = "_testContext",
-                Type = new CodeTypeReference(TESTCONTEXT_TYPE),
-            };
-
-
-            generationContext.TestClass.Members.Add(mstestContextFiled);
 
 
         }
