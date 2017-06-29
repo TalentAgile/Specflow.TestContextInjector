@@ -14,8 +14,8 @@
     <copyright>Copyright 2017</copyright>
     <tags>specflow mstests runsettings testcontext</tags>
     <dependencies>
-      <dependency id="SpecFlow.MsTest" version="2.1.0"  />
-      <dependency id="SpecFlow.CustomPlugin" version="2.1.0" />
+      <dependency id="SpecFlow.MsTest" version="2.2.0"  />
+      <dependency id="SpecFlow.CustomPlugin" version="2.2.0" />
     </dependencies>
   </metadata>
   <files>
